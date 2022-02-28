@@ -6,6 +6,7 @@ import digitalio
 from adafruit_hid.keyboard import Keyboard
 from adafruit_hid.keycode import Keycode
 
+# Stores last altered key press
 class alter:
     data = (0, 0, False, False, False)
     changed = False
@@ -27,7 +28,8 @@ class alter:
     def clear_data(self):
             self.data = ((0, 0, False, False, False))
             self.changed = False
-            
+
+# Stores which keys are currently pressed
 class press:
     last = 0
     kbd = 0
@@ -66,6 +68,7 @@ class press:
     def get_last(self):
         return self.last
 
+# Entry point for pressing and releasing keys
 def set_modifier(presser, new, old, key):
     if old != new:
         if new:
@@ -88,6 +91,7 @@ key_map = {0 : Keycode.CONTROL,
            8 : None,
            9 : None,
            10 : Keycode.ALT,
+
            11 : None,
            12 : None,
            13 : Keycode.LEFT_ARROW,
@@ -97,7 +101,7 @@ key_map = {0 : Keycode.CONTROL,
            17 : Keycode.UP_ARROW,
            18 : Keycode.DOWN_ARROW,
            19 : Keycode.ENTER,
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            20 : Keycode.KEYPAD_BACKSLASH,
+           20 : Keycode.KEYPAD_BACKSLASH,
            21 : None,
 
            22 : None,
@@ -427,11 +431,8 @@ while True:
                         presser.press(key_code)
                     else:
                         presser.release(key_code)
-    
-    if (kbd.led_on(Keyboard.LED_CAPS_LOCK) == led_lit):
-        #led_lit = not kbd.led_on(Keyboard.LED_CAPS_LOCK)
+
+    if kbd.led_on(Keyboard.LED_CAPS_LOCK) == led_lit:
         led_lit = not led_lit
         led.value = led_lit
 
-
-HH

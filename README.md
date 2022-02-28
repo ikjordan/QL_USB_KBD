@@ -41,6 +41,8 @@ Both `boot.py` and `code.py` should be copied to the root directory of the CIRCU
 ### Debug
 For debug purposes `key_test_ql.py` can be run. This is similar to `code.py`, but includes `print` commands, so keystrokes can be seen in REPL.
 
+### Known issues
+To allow switching between windows and full screen in [sQLux](https://github.com/SinclairQL/sQLux), `Shift ESC` is mapped to `F11`. This makes it difficult to generate the Copyright symbol in sQLux.
 
 # Why?
 Some people may question why a 35 year old keyboard of debatable quality should be converted to USB. There are two main reasons why I did this:
