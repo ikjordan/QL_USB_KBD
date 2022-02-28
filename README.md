@@ -45,6 +45,6 @@ For debug purposes `key_test_ql.py` can be run. This is similar to `code.py`, bu
 # Why?
 Some people may question why a 35 year old keyboard of debatable quality should be converted to USB. There are two main reasons why I did this:
 1) I consider the QL case as a good example of industrial design.
-2) It allows use of a modern emulator (either under MS Windows or [Linux](https://github.com/SinclairQL/sQLux) with an authentic keyboard.
+2) It allows use of a modern emulator (either under MS Windows or [Linux](https://github.com/SinclairQL/sQLux)) with an authentic keyboard.
 
-It is also ammusing that a $3 dollar part, running two m0+ cores at 125MHz, with 264kB of RAM and 2MB of Flash, is being used to control the keyboard of the QL, when originally the main QL processor ran at 7.5MHz, and accessed 128kB of RAM!
+It is also amusing that a $3 dollar part, running two m0+ cores at 125MHz, with 264kB of RAM and 2MB of Flash, is being used to control the keyboard of the QL, when originally the main QL processor ran at 7.5MHz, and accessed 128kB of RAM!
