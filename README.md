@@ -9,9 +9,9 @@ The Sinclair QL was launched in 1984, and production was discontinued in 1986. T
 This project provides code on the Raspberry Pi Pico 2040 that can decode signals from the keyboard matrix and send corresponding USB HID (Human Interface Devices) messages to a host computer.
 
 The QL keybaord layout is similar to a GB keyboard, with some small exceptions e.g:  
-Position of £ key  
-Position of " and @  
-No dedicated backspace and delete. (Control Left and Control Right is used instead).
++ Position of £ key  
++ Position of " # and @  
++ No dedicated backspace and delete. (Control Left and Control Right is used instead).
 
 The code translates keypresses so that the keyboard appears as a standard GB USB keyboard (albeit with less keys).
 
@@ -30,7 +30,7 @@ The QL case includes a Yellow Power LED. It draws approximately 15mA.
 In this project, it is connected to the Pico in series with a 220 Ω resister. The power LED has been configured to be on when CAPS LOCK is *not* set, and off when CAPS LOCK is not set. It has been configured this way, so that the Power light glows when in the more common setting i.e. CAPS LOCK is not enabled.
 
 ## Installation
-The project uses Circuit Python, and the Adafruit Matrix Keypad library. Instructions for installation can be found [here] (https://learn.adafruit.com/matrix-keypad/python-circuitpython)
+The project uses Circuit Python, and the Adafruit Matrix Keypad library. Instructions for installation can be found [here](https://learn.adafruit.com/matrix-keypad/python-circuitpython).
 
 The code must run automatically on power up. In addition the usual auto-mount of the CIRCUITPY drive should be disabled. 
 
