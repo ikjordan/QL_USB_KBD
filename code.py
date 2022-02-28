@@ -273,7 +273,7 @@ while True:
         # Convert the event to a specific key
         key_code = key_map.get(event.key_number, 0)
         
-        if (key_code != 0) and ((presser.key_count() < 3) or (not event.pressed)):
+        if (key_code is not None) and (key_code != 0) and ((presser.key_count() < 3) or (not event.pressed)):
             modifier = False
             
             if key_code == Keycode.SHIFT:

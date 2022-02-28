@@ -282,9 +282,9 @@ while True:
         key_code = key_map.get(event.key_number, 0)
         
         print("")
-        print("*** C:", key_code, "P:", event.pressed, "A:", altered.altered(), "S:", shift)
+        print("*** C:", key_code, "N:", event.key_number, "P:", event.pressed, "A:", altered.altered(), "S:", shift)
 
-        if (key_code != 0) and ((presser.key_count() < 3) or (not event.pressed)):
+        if (key_code is not None) and (key_code != 0) and ((presser.key_count() < 3) or (not event.pressed)):
             modifier = False
             
             if key_code == Keycode.LEFT_SHIFT or key_code == Keycode.RIGHT_SHIFT:
@@ -478,7 +478,7 @@ while True:
                         print("11. Releasing", key_code)
                         presser.release(key_code)
         else:
-            if key_code: 
+            if (key_code is not None) and (key_code != 0): 
                 print("Key ignored - too many pressed:", presser.key_count())
             else:
                 print("Key ignored Unknown code:", event.key_number)
