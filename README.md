@@ -1,5 +1,5 @@
 # QL_USB_KBD
-This Circuit Python code for the Raspberry Pi Pico 2040 allows a [Sinclair QL](https://en.wikipedia.org/wiki/Sinclair_QL) with a GB keyboard to be converted to a GB USB keyboard that can be used in Linux or MS Windows.
+This CircuitPython code for the Raspberry Pi Pico 2040 allows a [Sinclair QL](https://en.wikipedia.org/wiki/Sinclair_QL) with a GB keyboard to be converted to a GB USB keyboard that can be used in Linux or MS Windows.
 
 **No working QLs were harmed in the producion of this project, and no non-reversible changes were made to the QL case**
 
@@ -30,7 +30,7 @@ The QL case includes a Yellow Power LED. It draws approximately 15mA.
 In this project, it is connected to the Pico in series with a 220Ω resister. The power LED has been configured to be on when CAPS LOCK is *not* set, and off when CAPS LOCK is not set. It has been configured this way, so that the Power light glows when in the more common setting i.e. CAPS LOCK is not enabled.
 
 ## Installation
-The project uses Circuit Python, and the Adafruit Matrix Keypad library. Instructions for installation can be found [here](https://learn.adafruit.com/matrix-keypad/python-circuitpython).
+The project uses CircuitPython, and the Adafruit Matrix Keypad library. Instructions for installation can be found [here](https://learn.adafruit.com/matrix-keypad/python-circuitpython).
 
 The code must run automatically on power up. In addition the usual auto-mount of the CIRCUITPY drive should be disabled. 
 
@@ -45,8 +45,9 @@ For debug purposes `key_test_ql.py` can be run. This is similar to `code.py`, bu
 To allow switching between windows and full screen in [sQLux](https://github.com/SinclairQL/sQLux), `Shift ESC` is mapped to `F11`. This makes it difficult to generate the Copyright symbol in sQLux.
 
 # Why?
-Some people may question why a 35 year old keyboard of debatable quality should be converted to USB. There are two main reasons why I did this:
+Some people may question why a 35 year old keyboard of debatable quality should be converted to USB. The main reasons why I did this:
 1) I consider the QL case as a good example of industrial design.
 2) It allows use of a modern emulator (either under MS Windows or [Linux](https://github.com/SinclairQL/sQLux)) with an authentic keyboard.
+3) It makes a change for me to code for a real time application in Python, rather than C  
 
 It is also amusing that a $3 dollar part, running at 125MHz, with 264kB of RAM and 2MB of Flash, is being used to control the keyboard of the QL, when originally the main QL processor ran at 7.5MHz, and accessed 128kB of RAM!
