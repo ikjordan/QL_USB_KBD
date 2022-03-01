@@ -240,7 +240,7 @@ control_map = {Keycode.RIGHT_ARROW : (Keycode.DELETE, False),
 alt_map = {Keycode.LEFT_ARROW : (Keycode.HOME, False),
            Keycode.RIGHT_ARROW : (Keycode.END, False)}
 
-time.sleep(1)
+time.sleep(1)       # Allow time for host
 
 ### FOR QL:
 # 9 rows, 11 columns
@@ -262,7 +262,7 @@ presser = press(kbd,
                 key_map,
                 [shift_map, normal_map, control_map, alt_map])
 
-# TO DO May be able to simplify SHIFT
+# Note: Shift simplified for release version
 shift_right = False
 shift_left = False
 shift = False
@@ -279,12 +279,12 @@ led.value = led_lit
 while True:
     if km.events.get_into(event):
         # Convert the event to a specific key
-        key_code = key_map.get(event.key_number, 0)
+        key_code = key_map.get(event.key_number)
         
         print("")
         print("*** C:", key_code, "N:", event.key_number, "P:", event.pressed, "A:", altered.altered(), "S:", shift)
 
-        if (key_code is not None) and (key_code != 0) and ((presser.key_count() < 3) or (not event.pressed)):
+        if (key_code is not None) and ((presser.key_count() < 3) or (not event.pressed)):
             modifier = False
             
             if key_code == Keycode.LEFT_SHIFT or key_code == Keycode.RIGHT_SHIFT:
@@ -371,7 +371,7 @@ while True:
 
                 else: # Do not have an altered key
                     if event.pressed:
-                    # Special case if pressing shift, may need to change last key
+                        # Special case if pressing shift, may need to change last key
                         if key_code == Keycode.LEFT_SHIFT or key_code == Keycode.RIGHT_SHIFT:
                             last = presser.get_last()
                             if (last and not (control or alt)):
@@ -478,7 +478,7 @@ while True:
                         print("11. Releasing", key_code)
                         presser.release(key_code)
         else:
-            if (key_code is not None) and (key_code != 0): 
+            if key_code is not None: 
                 print("Key ignored - too many pressed:", presser.key_count())
             else:
                 print("Key ignored Unknown code:", event.key_number)
